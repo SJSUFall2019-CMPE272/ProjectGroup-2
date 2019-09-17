@@ -61,3 +61,16 @@ All the datasets are from the authorised govt. website
 https://www.eia.gov/electricity/data/state/
 https://www.eia.gov/renewable/data.php
 https://www.cnrfc.noaa.gov/forecasts.php
+
+
+### 4
+
+1. Title: Ghar
+2. Description: A convinient way for people to decide their housing options.
+3. Goal: The goal is to bring handy all the housing options for the people who are in search of a decent house to leave in. As finding a house that is reasonable in price, close to your work place/school is a difficult task. We will be building a tool that takes into consideration your priorities (i.e saving money, saving time, prime loaction, area near to a good public school, willing to share apartment or is a family person) and present to you all the possible options that you can adopt and estimates the total cost that include the housing expenses as well as the travelling expenses per month. Unlike other softwares our tool will not pin point a particular house that u can buy or lease rather it will loacte all the possible areas where you can find the house with your desired options and then use other sites(https://www.zillow.com) to find your dream home.
+4. Technology: Various machine learning libraries of Python such as Panda, numPy, sci-kit learn. Database such as Cockroach Db or mango Db. We may use django if a web application is built.
+
+Refrences:
+https://www.kaggle.com/camnugent/california-housing-prices
+https://www.kaggle.com/farhankarim1/usa-house-prices
+https://advocacy.calchamber.com/policy/issues/california-housing-crisis/
