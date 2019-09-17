@@ -1,5 +1,12 @@
 # ProjectGroup-2
 
+## Team
+
+1. Andrew Selvia
+2. Kaustubh Kulkarni
+3. Aditya Agrawal
+4. Pallavi Chaturvedi
+
 ## Project Ideas
 
 ### 1
