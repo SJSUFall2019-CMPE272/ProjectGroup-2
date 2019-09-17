@@ -51,4 +51,13 @@ iBuyer trends:
 
 ### 3
 
-TODO: health
+1. Title: Solargy (SOLAR enerGY)
+2. Description: Save Fossil Save Money Save Enviornment.
+3. Goal: US is second highest energy consumer in the world and out of which more than 77% of the energy is produced by fossil fuels—petroleum, natural gas, and coal, whereas solar energy contributes to only 1.66% of the total. Texas and California accounts for maximum energy consumption in the country. Hot states like these have more than sufficient sunlight to utilize it into energy production. We will help residential people and industrialists evaluate how much they will save financially in ‘n’ no. of years and eventually lead to free usage of electricity after installation cost is recovered. Also we plan to motivate them by showing how much they will be contributing to the environment. We will take into account predicted electricity prices in future. We will also guide people on what power solar panels should be installed based on their energy consumption. 
+4. Technology: We plan to use python and its libraries such as numpy and pandas for model generation. Also we plan to use pytorch or tensorflow for deep learning (if required). We will use seaborn for data visualization.
+
+References:
+All the datasets are from the authorised govt. website
+https://www.eia.gov/electricity/data/state/
+https://www.eia.gov/renewable/data.php
+https://www.cnrfc.noaa.gov/forecasts.php
