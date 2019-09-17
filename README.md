@@ -58,9 +58,9 @@ iBuyer trends:
 
 References:
 All the datasets are from the authorised govt. website
-https://www.eia.gov/electricity/data/state/
-https://www.eia.gov/renewable/data.php
-https://www.cnrfc.noaa.gov/forecasts.php
+* <https://www.eia.gov/electricity/data/state/>
+* <https://www.eia.gov/renewable/data.php>
+* <https://www.cnrfc.noaa.gov/forecasts.php>
 
 
 ### 4
@@ -71,6 +71,13 @@ https://www.cnrfc.noaa.gov/forecasts.php
 4. Technology: Various machine learning libraries of Python such as Panda, numPy, sci-kit learn. Database such as Cockroach Db or mango Db. We may use django if a web application is built.
 
 Refrences:
-https://www.kaggle.com/camnugent/california-housing-prices
-https://www.kaggle.com/farhankarim1/usa-house-prices
-https://advocacy.calchamber.com/policy/issues/california-housing-crisis/
+* <https://www.kaggle.com/camnugent/california-housing-prices>
+* <https://www.kaggle.com/farhankarim1/usa-house-prices>
+* <https://advocacy.calchamber.com/policy/issues/california-housing-crisis>
+
+### 5 
+
+1. Title: Logistics Optimization
+2. Description: Optimize logistics transportation by maximizing the amount of goods carried in each container.
+3. Goal: Currently loading of packages into containers is done manually by experienced workers y major companies like walmart, amazon, target. We intend to build a tool wherein employee will b able to scan his container using camera(phone), we will get the container dimentions using Augmented Reality and finally we will build a model on how the employee can put the maximum no of packages(of different dimentions) into it, utilizing maximum space. 
+4. Technology: We will not use supervised Machine Learning into this so we won't require any prexisting datasets. We intend to use AR for container's dimention detection along with OpenCV(Image processing library) of python. For modeling we can use VPython, Sci-kit learn or some other modeling libraries.
