@@ -7,7 +7,13 @@
 3. [Kaustubh Kulkarni](https://github.com/kaustubhkulkarni1509)
 4. [Andrew Selvia](https://github.com/AndrewSelvia)
 
-## Project Ideas
+## Project Titles
+
+### [1. Rinnovation](#rinnovation)
+### [2. Solargy](#solargy)
+### [3. घर (Ghar)](#घर-(Ghar))
+
+## Project Proposals
 
 ### 1. Rinnovation
 
