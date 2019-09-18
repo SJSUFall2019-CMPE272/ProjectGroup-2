@@ -13,44 +13,55 @@
 
 #### Optimize your home renovation.
 
-Guide homeowners toward renovations that will yield optimal results for their property. Whether the customer is focused on time, cost, or ROI, empower them to make the best decision based on local and global trends in renovations. Answer questions such as:
+Whether you're a young couple moving into your first home or a seasoned property manager, you might be asking yourself, "How do I turn this *fixer-upper* into a *dream home*?". We're here to help. We will build Rinnovation: a way for you to ensure your renovation projects yield optimal results. Whether you're focused on time, cost, or ROI, we empower you to make the best decision based on local and global trends.
+ 
+Answer questions such as:
 * Which room should I update?
-* How much should I invest in a renovation project?
+* How much should I invest?
 * Who should I trust to get the job done on-time?
 
-There is existing work in this area. For instance, OpenDoor has a [tool that calculates which home improvements add the most value](https://www.opendoor.com/w/home-improvement-value-calculator). With the advent of *iBuyers* (corporations attempting to streamline real estate transactions), the demand for a tool which learns and recommends renovation trends in real-time has never been higher. Flush with venture capital, these corporations are able to make real estate purchases at high velocity and scale, thereby saving time and eliminating waste. However, once they have acquired properties, they have assumed a fair amount of risk. They need to optimize their processes to reduce temporal & fiscal costs associated with renovation. We aim to solve that problem.
+By leveraging data from other renovations, we can predict how much your project is likely to cost, how long it will take, and the ROI. Rinnovation never stops learning. Whether the current trend is bamboo flooring or balconies, you'll know about it first.
+
+##### Enterprise Customers
+
+For corporate property managers, our enterprise solution yields even more insight. We will integrate with your existing tools like [PlanGrid](https://www.plangrid.com) to provide you real-time alerts when we can confidently predict that a project's schedule will be impacted. After all, time is money.
+
+Maybe you own a rental property and need to know how to develop it. Perhaps you're operating a venture capital-backed startup (i.e. [Opendoor](https://www.curbed.com/2019/3/21/18252048/real-estate-house-flipping-zillow-ibuyer-opendoor), Zillow, etc.) gobbling up millions of dollars of real estate. No matter the size of your business, we want to see your projects succeed. Rinnovation keeps up with the high-velocity, large-scale nature of your work. Reduce risk and proceed more confidently with Rinnovation. 
 
 #### Technology
 
 ##### DevOps
 
+We will containerize any service we produce. Hopefully, someone on the team will be able to independently own containerization & orchestration duties.
+
 * [Docker](https://github.com/docker)
 * [Kubernetes](https://github.com/kubernetes/kubernetes)
 
+##### Machine Learning
+
+We will use whatever machine learning tool is best for the job. I am currently toying with [DCGANs using PyTorch](https://github.com/pytorch/examples/tree/master/dcgan). The approach is used to generate pictures of bedrooms based on a training set of bedroom images. It would be neat to use a similar approach to generate pictures of renovation project outcomes immediately for the customer.
+
+* [pandas](https://github.com/pandas-dev/pandas)
+* [NumPy](https://github.com/numpy/numpy)
+* [PyTorch](https://www.github.com/pytorch/pytorch)
+* [TensorFlow](https://www.github.com/tensorflow/tensorflow)
+
+##### Distributed Systems
+
+I would really love to use [Akka Cluster](https://doc.akka.io/docs/akka/current/index-cluster.html) if it makes sense for any portion of the project. Since OperatorHub has an [Akka Cluster Operator](https://operatorhub.io/operator/akka-cluster-operator), we'll start there.
+
+##### Frontend
+
+This is not the focus of our project. We will make something functional, of course, but our focus is on building the renovation engine.
+
+##### Database
+
+* [CockroachDB](https://github.com/cockroachdb/cockroach)
+* A time-series DB: We need help evaluating if this will be useful and which one to choose.
+
 #### Research
 
-##### Data
-
-* <https://towardsdatascience.com/home-remodeling-analysis-turned-excel-data-handling-in-python-e1115f8302e4>
-* <https://www.jchs.harvard.edu/research-areas/reports/demographic-change-and-remodeling-outlook>
-* <https://www.statista.com/topics/1732/home-improvement>
-* <https://reg.hanleywood.com/rf/REMODELING5502017/001/s/SITE/a/4864>
-* <http://hinkle-construction.com/project-costs>
-* <https://www.nahb.org/en/Products/34320__Remodeling%20Expenditures%20Zip%20Code-Complete%20Dataset%20-%2034320.aspx>
-* <https://www.zillow.com/research/data>
-* <https://www.zillow.com/research/ztrax>
-
-##### Market Research
-
-* <https://www.curbed.com/2019/3/21/18252048/real-estate-house-flipping-zillow-ibuyer-opendoor>
-* <https://www.bloomberg.com/news/features/2019-02-14/zillow-wants-to-flip-your-house>
-* <https://www.opendoor.com/w/blog/liquidity-modeling-real-estate-survival-analysis>
-> At Opendoor, we buy and sell thousands of homes a month. The longer a home remains in our inventory, the more exposure we have to macroeconomic shifts. Moreover, property taxes, home financing, and maintenance fees all increase with time. These costs—which are sometimes referred to as “liquidity risk”—directly impact our unit economics. It is critical that we’re able to understand and predict how long a house will take to sell.
-* <https://www.opendoor.com/w/home-improvement-value-calculator>
-* <https://www.opendoor.com/w/guides/how-opendoor-calculates-the-value-of-your-home>
-* <https://digital.hbs.edu/platform-digit/submission/opendoor-applying-big-data-to-home-selling>
-* <https://www.cbinsights.com/research/report/opendoor-real-estate-teardown-expert-intelligence>
-* <https://www.marketwatch.com/story/selling-your-home-to-an-ibuyer-could-cost-you-thousands-heres-why-2019-06-11>
+You can follow our research into viable [data sets](Research/Rinnovation#data-sets) & [market research](Research/Rinnovation#market-research). 
 
 ### Solargy
 
@@ -84,7 +95,7 @@ The US is the second-highest energy consumer in the world. More than 77% of the 
 * <https://en.wikipedia.org/wiki/Solar_power_in_the_United_States>
 
 
-### Ghar
+### घर (Ghar)
 
 #### A convenient way for people to decide their housing options.
 
