@@ -9,7 +9,7 @@
 
 ## Project Ideas
 
-### Rinnovation
+### 1. Rinnovation
 
 #### Optimize your home renovation.
 
@@ -63,7 +63,7 @@ This is not the focus of our project. We will make something functional, of cour
 
 You can follow our research into viable [data sets](Research/Rinnovation#data-sets) & [market research](Research/Rinnovation#market-research). 
 
-### Solargy
+### 2. Solargy
 
 #### Save Fossil. Save Money. Save Environment.
 
@@ -95,7 +95,7 @@ The US is the second-highest energy consumer in the world. More than 77% of the 
 * <https://en.wikipedia.org/wiki/Solar_power_in_the_United_States>
 
 
-### घर (Ghar)
+### 3. घर (Ghar)
 
 #### A convenient way for people to decide their housing options.
 
