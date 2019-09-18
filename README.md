@@ -1,32 +1,36 @@
-# ProjectGroup-2
+# Group 2
 
 ## Team
 
-1. Andrew Selvia
-2. Kaustubh Kulkarni
-3. Aditya Agrawal
-4. Pallavi Chaturvedi
+1. [Aditya Agrawal](https://github.com/agrawaladit)
+2. [Pallavi Chaturvedi](https://github.com/pallavichaturvedi)
+3. [Kaustubh Kulkarni](https://github.com/kaustubhkulkarni1509)
+4. [Andrew Selvia](https://github.com/AndrewSelvia)
 
 ## Project Ideas
 
-### 1
+### Rinnovation
 
-1. Title: Rinnovation
+#### Optimize your home renovation.
 
-2. Description: Optimize your home renovation.
-
-3. Goal: Guide homeowners toward renovations that will yield optimal results for their property. Whether the customer is focused on time, cost, or ROI, empower them to make the best decision based on local and global trends in renovations. Answer questions such as:
+Guide homeowners toward renovations that will yield optimal results for their property. Whether the customer is focused on time, cost, or ROI, empower them to make the best decision based on local and global trends in renovations. Answer questions such as:
 * Which room should I update?
 * How much should I invest in a renovation project?
 * Who should I trust to get the job done on-time?
 
 There is existing work in this area. For instance, OpenDoor has a [tool that calculates which home improvements add the most value](https://www.opendoor.com/w/home-improvement-value-calculator). With the advent of *iBuyers* (corporations attempting to streamline real estate transactions), the demand for a tool which learns and recommends renovation trends in real-time has never been higher. Flush with venture capital, these corporations are able to make real estate purchases at high velocity and scale, thereby saving time and eliminating waste. However, once they have acquired properties, they have assumed a fair amount of risk. They need to optimize their processes to reduce temporal & fiscal costs associated with renovation. We aim to solve that problem.
 
-4. Technology: For reference, Opendoor lists many [technologies](https://hackernoon.com/the-stack-that-helped-opendoor-buy-and-sell-over-1b-in-homes-4a2e59fbcea7) they use, such as: Docker, Kubernetes, and Flask. We will employ some common tools, but also intend to explore time-series DBs, Akka, and [PyTorch](https://pytorch.org). We are also open to suggestions so that we can make quick progress and avoid pitfalls.
+#### Technology
 
-References:
+##### DevOps
 
-Data Sets we are investigating:
+* [Docker](https://github.com/docker)
+* [Kubernetes](https://github.com/kubernetes/kubernetes)
+
+#### Research
+
+##### Data
+
 * <https://towardsdatascience.com/home-remodeling-analysis-turned-excel-data-handling-in-python-e1115f8302e4>
 * <https://www.jchs.harvard.edu/research-areas/reports/demographic-change-and-remodeling-outlook>
 * <https://www.statista.com/topics/1732/home-improvement>
@@ -36,8 +40,8 @@ Data Sets we are investigating:
 * <https://www.zillow.com/research/data>
 * <https://www.zillow.com/research/ztrax>
 
+##### Market Research
 
-iBuyer trends:
 * <https://www.curbed.com/2019/3/21/18252048/real-estate-house-flipping-zillow-ibuyer-opendoor>
 * <https://www.bloomberg.com/news/features/2019-02-14/zillow-wants-to-flip-your-house>
 * <https://www.opendoor.com/w/blog/liquidity-modeling-real-estate-survival-analysis>
@@ -48,18 +52,31 @@ iBuyer trends:
 * <https://www.cbinsights.com/research/report/opendoor-real-estate-teardown-expert-intelligence>
 * <https://www.marketwatch.com/story/selling-your-home-to-an-ibuyer-could-cost-you-thousands-heres-why-2019-06-11>
 
-### 2
+### Solargy
 
-1. Title: Solargy (SOLAR enerGY)
+#### Save Fossil. Save Money. Save Environment.
 
-2. Description: Save Fossil Save Money Save Enviornment.
+The US is the second-highest energy consumer in the world. More than 77% of the energy is produced by [fossil fuels](https://www.americangeosciences.org/critical-issues/faq/what-are-major-sources-and-users-energy-united-states) (petroleum, natural gas, and coal), whereas only 1.66% is produced by [solar energy](https://en.wikipedia.org/wiki/Solar_power_in_the_United_States). Texas and California account for the most energy consumption in the country. Hot states like these have more than sufficient sunlight to transform it into energy. We will help consumers and businesses evaluate how much they will save financially over a given number of years. Moreover, we plan to motivate them by showing them how much their choices preserve the environment. We also plan to inform users if solar energy generation for some particular day will be lower than expected based on weather data, thereby helping users plan their consumption in advance (i.e. avoiding use of washing machine, dryer, etc.). Also we'll suggest the ways they could consume less energy.
 
-3. Goal: US is second highest energy consumer in the world and out of which more than 77% of the energy is produced by fossil fuels—petroleum, natural gas, and coal, whereas solar energy contributes to only 1.66% of the total. Texas and California accounts for maximum energy consumption in the country. Hot states like these have more than sufficient sunlight to utilize it into energy production. We will help residential people and industrialists evaluate how much they will save financially in ‘n’ no. of years and eventually lead to free usage of electricity after installation cost is recovered. Moreover, we plan to motivate them by showing how much they will be contributing to the environment. We will take into account predicted electricity prices in future, also weather conditions which would affect the energy production. We will also guide people on what power solar panels should be installed based on their energy consumption. We also plan to inform users if solar energy generation for some perticular day will be lower than expected, considering the forecast report, which will help them plan their consumption in advance (like avoid using washing machine, dryer). Also we'll suggest the ways they could consume less energy.
+#### Technology
 
-4. Technology: We plan to use python and its libraries such as numpy, pandas and sci-kit learn for model generation. Also we plan to use pytorch or tensorflow for deep learning (if required). We will use seaborn for data visualization. We plan to use unorthodox database such as Cockroach DB.
+##### Data Visualization
 
-References:
-All the datasets are from the authorised govt. website
+* [Seaborn](https://github.com/mwaskom/seaborn)
+
+##### Database
+
+* [CockroachDB](https://github.com/cockroachdb/cockroach)
+
+##### Machine Learning
+
+* [pandas](https://github.com/pandas-dev/pandas)
+* [NumPy](https://github.com/numpy/numpy)
+* [PyTorch](https://www.github.com/pytorch/pytorch)
+* [TensorFlow](https://www.github.com/tensorflow/tensorflow)
+
+#### References
+
 * <https://www.eia.gov/electricity/data/state/>
 * <https://www.eia.gov/renewable/data.php>
 * <https://www.cnrfc.noaa.gov/forecasts.php>
@@ -67,17 +84,36 @@ All the datasets are from the authorised govt. website
 * <https://en.wikipedia.org/wiki/Solar_power_in_the_United_States>
 
 
-### 3
+### Ghar
 
-1. Title: Ghar
+#### A convenient way for people to decide their housing options.
 
-2. Description: A convinient way for people to decide their housing options.
+The goal is to bring handy all the housing options for the people who are in search of a decent house to leave in. As finding a house that is reasonable in price, close to your work place/school is a difficult task. We will be building a tool that takes into consideration your priorities (i.e saving money, saving time, prime loaction, area near to a good public school, willing to share apartment or is a family person) and present to you all the possible options that you can adopt and estimates the total cost that include the housing expenses as well as the travelling expenses per month. We will consider the impact of various factors (i.e. [air quality](https://www.epa.gov/outdoor-air-quality-data), [fire incidents](https://fire.ca.gov/incidents/), etc.) on topics that matter to the audience: climate change, public health, and crime (to name just a few). Unlike other softwares our tool will not pin point a particular house that u can buy or lease rather it will loacte all the possible areas where you can find the house with your desired options and then use other sites(https://www.zillow.com) to find your dream home in the area predicted by us. Later we plan to map these locations based on various user preferences.
 
-3. Goal: The goal is to bring handy all the housing options for the people who are in search of a decent house to leave in. As finding a house that is reasonable in price, close to your work place/school is a difficult task. We will be building a tool that takes into consideration your priorities (i.e saving money, saving time, prime loaction, area near to a good public school, willing to share apartment or is a family person) and present to you all the possible options that you can adopt and estimates the total cost that include the housing expenses as well as the travelling expenses per month. We will consider the impact of various factors (i.e. [air quality](https://www.epa.gov/outdoor-air-quality-data), [fire incidents](https://fire.ca.gov/incidents/), etc.) on topics that matter to the audience: climate change, public health, and crime (to name just a few). Unlike other softwares our tool will not pin point a particular house that u can buy or lease rather it will loacte all the possible areas where you can find the house with your desired options and then use other sites(https://www.zillow.com) to find your dream home in the area predicted by us. Later we plan to map these locations based on various user preferences.
+#### Technology
 
-4. Technology: Various machine learning libraries of Python such as Panda, numPy, sci-kit learn. We may use django if a web application is built.For displaying maps, we will leverage an existing toolset (i.e. Mapbox, MapKit JS, etc.). We will focus on exploring new databases (i.e. time-series DBs, CockroachDB).
+##### Machine Learning
 
-Refrences:
+* [pandas](https://github.com/pandas-dev/pandas)
+* [NumPy](https://github.com/numpy/numpy)
+* [scikit-learn](https://github.com/scikit-learn/scikit-learn)
+
+##### Database
+
+* [CockroachDB](https://github.com/cockroachdb/cockroach) 
+* [MongoDB](https://github.com/mongodb/mongo)
+
+##### Web Framework
+
+* [Django](https://github.com/django/django)
+
+##### Maps
+
+* [Mapbox](https://www.mapbox.com)
+* [MapKit JS](https://developer.apple.com/documentation/mapkitjs)
+
+#### References
+
 * <https://www.kaggle.com/camnugent/california-housing-prices>
 * <https://www.kaggle.com/farhankarim1/usa-house-prices>
 * <https://advocacy.calchamber.com/policy/issues/california-housing-crisis>
