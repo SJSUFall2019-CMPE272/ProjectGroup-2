@@ -105,7 +105,7 @@ The US is the second-highest energy consumer in the world. More than 77% of the 
 
 #### A convenient way for people to decide their housing options.
 
-We aim to improve house hunting. Finding housing that is affordable and close to work/school is a difficult task. We intend to build a tool that takes into consideration a user's priorities (i.e. money, time, location, school quality, and roommate criteria) and presents her with the most relevant options. Unlike other software, our tool will not pinpoint a particular house, rather it will locate all the possible areas where you can find the house with your desired options. Later we plan to map these locations based on various user preferences.
+We plan to tackle one of the biggest social problem of USA i.e budget housing and aim to improve house hunting. Finding housing that is affordable and close to work/school is a difficult task. We intend to build a tool that takes into consideration a user's priorities (i.e. money, time, location, school quality, and roommate criteria) and presents her with the most relevant options. Unlike other software, our tool will not pinpoint a particular house, rather it will locate all the possible areas where you can find the house with your desired options. Later we plan to map these locations based on various user preferences.
 
 #### Technology
 
