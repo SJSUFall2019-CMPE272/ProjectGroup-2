@@ -2,10 +2,10 @@
 
 ## Team
 
-1. [Andrew Selvia](https://github.com/AndrewSelvia)
-2. [Pallavi Chaturvedi](https://github.com/pallavichaturvedi)
+1. [Aditya Agrawal](https://github.com/agrawaladit)
+2. [Andrew Selvia](https://github.com/AndrewSelvia)
 3. [Kaustubh Kulkarni](https://github.com/kaustubhkulkarni1509)
-4. [Aditya Agrawal](https://github.com/agrawaladit)
+4. [Pallavi Chaturvedi](https://github.com/pallavichaturvedi)
 
 ## Project Titles
 
