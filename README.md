@@ -67,7 +67,7 @@ This is not the focus of our project. We will make something functional, of cour
 
 #### Research
 
-You can follow our research into viable [data sets](Research/Rinnovation#data-sets) & [market research](Research/Rinnovation#market-research). 
+You can follow our research into viable [data sets](Research/Rinnovation.md#data-sets) & [market research](Research/Rinnovation.md#market-research). 
 
 ### 2. Solargy
 
