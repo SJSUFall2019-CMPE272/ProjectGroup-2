@@ -11,7 +11,7 @@
 
 ### [1. Rinnovation](#1-rinnovation-1)
 ### [2. Solargy](#2-solargy-1)
-### [3. घर (Ghar)](#3-घर-(Ghar)-1)
+### [3. घर (Ghar)](#3-घर-ghar-1)
 
 ## Project Proposals
 
