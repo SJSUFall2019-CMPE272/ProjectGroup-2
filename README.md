@@ -15,7 +15,9 @@
 
 ## Project Proposals
 
-### 1. Rinnovation
+### 1. Rinnovation - APPROVED see comments below:
+
+From picture of the home, machine generates square footage of each structure in the home. you need a lot of data to train a CNN model. This will help predict cost and time of renovation. For some fixer upper houses, finding the right measuremnts without seeing it is impossible. 
 
 #### Optimize your home renovation.
 
