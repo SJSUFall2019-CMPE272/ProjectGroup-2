@@ -1,0 +1,65 @@
+### 2. Solargy
+
+#### Save Fossil. Save Money. Save Environment.
+
+The US is the second-highest energy consumer in the world. More than 77% of the energy is produced by [fossil fuels](https://www.americangeosciences.org/critical-issues/faq/what-are-major-sources-and-users-energy-united-states) (petroleum, natural gas, and coal), whereas only 1.66% is produced by [solar energy](https://en.wikipedia.org/wiki/Solar_power_in_the_United_States). Texas and California account for the most energy consumption in the country. Hot states like these have more than sufficient sunlight to transform it into energy. We will help consumers and businesses evaluate how much they will save financially over a given number of years. Moreover, we plan to motivate them by showing them how much their choices preserve the environment. We also plan to inform users if solar energy generation for some particular day will be lower than expected based on weather data, thereby helping users plan their consumption in advance (i.e. avoiding use of washing machine, dryer, etc.). Also we'll suggest the ways they could consume less energy.
+
+#### Technology
+
+##### Data Visualization
+
+* [Seaborn](https://github.com/mwaskom/seaborn)
+
+##### Database
+
+* [CockroachDB](https://github.com/cockroachdb/cockroach)
+
+##### Machine Learning
+
+* [pandas](https://github.com/pandas-dev/pandas)
+* [NumPy](https://github.com/numpy/numpy)
+* [PyTorch](https://www.github.com/pytorch/pytorch)
+* [TensorFlow](https://www.github.com/tensorflow/tensorflow)
+
+#### References
+
+* <https://www.eia.gov/electricity/data/state/>
+* <https://www.eia.gov/renewable/data.php>
+* <https://www.cnrfc.noaa.gov/forecasts.php>
+* <https://www.americangeosciences.org/critical-issues/faq/what-are-major-sources-and-users-energy-united-states>
+* <https://en.wikipedia.org/wiki/Solar_power_in_the_United_States>
+
+
+### 3. घर (Ghar)
+
+#### A convenient way for people to decide their housing options.
+
+We plan to tackle one of the biggest social problem of USA i.e budget housing and aim to improve house hunting. Finding housing that is affordable and close to work/school is a difficult task. We intend to build a tool that takes into consideration a user's priorities (i.e. money, time, location, school quality, and roommate criteria) and presents her with the most relevant options. Unlike other software, our tool will not pinpoint a particular house, rather it will locate all the possible areas where you can find the house with your desired options. Later we plan to map these locations based on various user preferences.
+
+#### Technology
+
+##### Machine Learning
+
+* [pandas](https://github.com/pandas-dev/pandas)
+* [NumPy](https://github.com/numpy/numpy)
+* [scikit-learn](https://github.com/scikit-learn/scikit-learn)
+
+##### Database
+
+* [CockroachDB](https://github.com/cockroachdb/cockroach) 
+* [MongoDB](https://github.com/mongodb/mongo)
+
+##### Web Framework
+
+* [Django](https://github.com/django/django)
+
+##### Maps
+
+* [Mapbox](https://www.mapbox.com)
+* [MapKit JS](https://developer.apple.com/documentation/mapkitjs)
+
+#### References
+
+* <https://www.kaggle.com/camnugent/california-housing-prices>
+* <https://www.kaggle.com/farhankarim1/usa-house-prices>
+* <https://advocacy.calchamber.com/policy/issues/california-housing-crisis>
