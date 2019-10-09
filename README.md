@@ -51,6 +51,12 @@ This is not the focus of our project. We will make something functional, of cour
 
 ![Architecture](Architecture.png)
 
+#### References
+
+* [How to Get Started with Machine Learning on Bluemix](https://dzone.com/articles/how-to-get-started-with-machine-learning-on-bluemi-1)
+* [Using AWS and OpenShift Together](https://blog.openshift.com/using-aws-openshift-together)
+* [Image-Net](http://image-net.org/about-overview)
+
 ### Research
 
 You can follow our research into viable [data sets](Research/Rinnovation.md#data-sets) & [market research](Research/Rinnovation.md#market-research).
