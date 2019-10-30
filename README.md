@@ -22,6 +22,7 @@ Maybe you own a rental property and need to know how to develop it. Perhaps you'
 # Repositories
 
 * [rinnovation-service](https://github.com/AndrewSelvia/rinnovation-service)
+* [rinnovation-etl](https://github.com/AndrewSelvia/rinnovation-etl)
 
 # Architecture
 
