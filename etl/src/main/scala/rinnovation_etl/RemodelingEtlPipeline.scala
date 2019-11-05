@@ -12,16 +12,23 @@ import technology.tabula.extractors.BasicExtractionAlgorithm
 import technology.tabula.writers.CSVWriter
 
 import scala.io.Source
+import scala.jdk.CollectionConverters._
 import scala.language.postfixOps
 import scala.sys.process._
 
 object RemodelingEtlPipeline extends App {
   private val browser = JsoupBrowser()
   private val regionsDirectoryName = "regions"
-  private val citiesWithoutPdfsIn2019 = Set(
-    "daytonabeachfl",
-    "myrtlebeachsc")
-  private val year = 2018
+  private val citiesWithoutPdfsByYear = Map(
+    2016 -> Set(
+      "wichitaks"
+    ),
+    2019 -> Set(
+      "daytonabeachfl",
+      "myrtlebeachsc"
+    )
+  )
+  private val year = 2016
   new File(getClass.getResource(s"/$regionsDirectoryName/$year").getPath)
     .listFiles
     .toSeq
@@ -36,7 +43,7 @@ object RemodelingEtlPipeline extends App {
         .toString
         .replace("-", "")
         .replace("/", ""))
-//    .filterNot(citiesWithoutPdfsIn2019.contains) // Some cities do not have accessible PDFs, they result in errors
+    .filterNot(citiesWithoutPdfsByYear(year).contains) // Some cities do not have accessible PDFs, they result in errors
 //    .filter(_ == "sandiegoca") // TODO: remove this when you move to production; only for testing
     .foreach(cityName => {
       val byteArrayOutputStream = new ByteArrayOutputStream
@@ -49,17 +56,30 @@ object RemodelingEtlPipeline extends App {
 
   def writeCsv(year: Int, cityName: String, byteArray: Array[Byte]): Unit = {
     val pageNumbersByYear = Map(
+      2016 -> 9,
+      2017 -> 9,
       2018 -> 9,
       2019 -> 11
     )
     val pageNumber = pageNumbersByYear(year)
-    val page = getPage(byteArray, pageNumber).getArea(125, 45, 600, 745)
-    val bea = new BasicExtractionAlgorithm
-    val table = bea.extract(page).get(0)
-    val file = new File(s"/tmp/rinnovation/$year/$cityName.csv")
-    file.mkdirs
-    new CSVWriter().write(new FileWriter(file), table)
-    massageCsv(year, cityName, file)
+    val basicExtractionAlgorithm = new BasicExtractionAlgorithm
+    val path = new File(s"/tmp/rinnovation/$year")
+    path.mkdirs
+    val file = path.toPath.resolve(s"$cityName.csv").toFile
+    val csvWriter = new CSVWriter()
+    year match {
+      case 2016 | 2017 =>
+        val page = getPage(byteArray, pageNumber)
+        val table1 = basicExtractionAlgorithm.extract(page.getArea(152, 45, 382, 745)).get(0)
+        val table2 = basicExtractionAlgorithm.extract(page.getArea(406, 45, 519, 745)).get(0)
+        csvWriter.write(new FileWriter(file), List(table1, table2).asJava)
+        massageCsv(year, cityName, file)
+      case 2018 | 2019 =>
+        val page = getPage(byteArray, pageNumber).getArea(125, 45, 600, 745)
+        val table = basicExtractionAlgorithm.extract(page).get(0)
+        csvWriter.write(new FileWriter(file), table)
+        massageCsv(year, cityName, file)
+    }
   }
 
   def massageCsv(year: Int, cityName: String, file: File): Unit = {
