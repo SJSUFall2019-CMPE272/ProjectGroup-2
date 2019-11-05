@@ -18,15 +18,16 @@ import scala.sys.process._
 object RemodelingEtlPipeline extends App {
   private val browser = JsoupBrowser()
   private val regionsDirectoryName = "regions"
-  private val citiesWithoutPdfsIn2019 = List(
+  private val citiesWithoutPdfsIn2019 = Set(
     "daytonabeachfl",
     "myrtlebeachsc")
-  new File(getClass.getResource(s"/$regionsDirectoryName").getPath)
+  private val year = 2018
+  new File(getClass.getResource(s"/$regionsDirectoryName/$year").getPath)
     .listFiles
     .toSeq
     .flatMap(file =>
       browser
-        .parseString(Source.fromResource(s"$regionsDirectoryName/${file.getName}").mkString)
+        .parseString(Source.fromResource(s"$regionsDirectoryName/$year/${file.getName}").mkString)
         >> elementList("#cvv-locations li")
         >> element("a")
         >> attr("href"))
@@ -35,28 +36,33 @@ object RemodelingEtlPipeline extends App {
         .toString
         .replace("-", "")
         .replace("/", ""))
-    .filterNot(citiesWithoutPdfsIn2019.contains) // Some cities do not have accessible PDFs, they result in errors
+//    .filterNot(citiesWithoutPdfsIn2019.contains) // Some cities do not have accessible PDFs, they result in errors
 //    .filter(_ == "sandiegoca") // TODO: remove this when you move to production; only for testing
     .foreach(cityName => {
       val byteArrayOutputStream = new ByteArrayOutputStream
-      writePdfFileContentsToByteArrayOutputStream(cityName, byteArrayOutputStream)
-      writeCsv(cityName, byteArrayOutputStream.toByteArray)
+      writePdfFileContentsToByteArrayOutputStream(year, cityName, byteArrayOutputStream)
+      writeCsv(year, cityName, byteArrayOutputStream.toByteArray)
     })
 
   // TODO: this blocks; when I switch to Akka-HTTP, make it nonblocking; also, it has side-effects; not good
-  def writePdfFileContentsToByteArrayOutputStream(cityName: String, byteArrayOutputStream: ByteArrayOutputStream) = new URL(s"https://s3.amazonaws.com/HW_Assets/CVV_Assets/2019/Consumer/$cityName.pdf") #> byteArrayOutputStream !!
+  def writePdfFileContentsToByteArrayOutputStream(year: Int, cityName: String, byteArrayOutputStream: ByteArrayOutputStream) = new URL(s"https://s3.amazonaws.com/HW_Assets/CVV_Assets/$year/Consumer/$cityName.pdf") #> byteArrayOutputStream !!
 
-  def writeCsv(cityName: String, byteArray: Array[Byte]): Unit = {
-    val pageNumber = 11 // 9 for 2018
+  def writeCsv(year: Int, cityName: String, byteArray: Array[Byte]): Unit = {
+    val pageNumbersByYear = Map(
+      2018 -> 9,
+      2019 -> 11
+    )
+    val pageNumber = pageNumbersByYear(year)
     val page = getPage(byteArray, pageNumber).getArea(125, 45, 600, 745)
     val bea = new BasicExtractionAlgorithm
     val table = bea.extract(page).get(0)
-    val file = new File(s"/tmp/rinnovation/$cityName.csv")
+    val file = new File(s"/tmp/rinnovation/$year/$cityName.csv")
+    file.mkdirs
     new CSVWriter().write(new FileWriter(file), table)
-    massageCsv(cityName, file)
+    massageCsv(year, cityName, file)
   }
 
-  def massageCsv(cityName: String, file: File): Unit = {
+  def massageCsv(year: Int, cityName: String, file: File): Unit = {
     import com.github.tototoshi.csv.{CSVParser, CSVWriter}
     val source = Source.fromFile(file)
     val values = source
@@ -81,7 +87,7 @@ object RemodelingEtlPipeline extends App {
           )
           .filter(_.nonEmpty))
       .toSeq
-      .map(2019 :: cityName :: _)
+      .map(year :: cityName :: _)
     CSVWriter
       .open(file)
       .writeAll(values)
