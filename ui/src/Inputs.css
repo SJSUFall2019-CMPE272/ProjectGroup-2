@@ -1,0 +1,19 @@
+input[type=text], input[type=password] {
+    display: inline-block;
+    border-color: hotpink;
+    
+  }
+
+  input[type=text]:focus, input[type=password]:focus {
+    border-color: red;
+    outline: none;
+  }
+
+  
+  
+  /* Clear floats */
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }

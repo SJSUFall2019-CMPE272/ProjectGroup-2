@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Finger+Paint&display=swap');
+@font-face{
+    font-family:"Finger Paint";
+    src:url('https://fonts.googleapis.com/css?family=Finger+Paint&display=swap');
+}
+
+
+.Title{
+    font-family:"Finger Paint";
+    /*background-color: #a6a6a6;*/
+}
+
+h1 {
+    color: #265d0c;
+  }
