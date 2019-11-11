@@ -37,6 +37,8 @@ What: can factor in locale-specific renovation ROI prior to purchasing a propert
 
 Wow: so they can make their purchase more confidently, avoiding false assumptions.
 
+![Home Buyer Persona](Home_Buyer_Persona.png)
+
 ### iBuyer Operations Managers
 
 Who: iBuyer operations managers
