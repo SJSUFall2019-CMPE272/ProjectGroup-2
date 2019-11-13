@@ -29,6 +29,9 @@ What: can explore predicted returns for various home renovations
 
 Wow: independently, immediately, and with city-level insight into local market trends.
 
+![Home Owner Persona](Home_Owner_Persona.png)
+
+
 ### Home Buyer
 
 Who: A home buyer
@@ -39,6 +42,7 @@ Wow: so they can make their purchase more confidently, avoiding false assumption
 
 ![Home Buyer Persona](Home_Buyer_Persona.png)
 
+
 ### iBuyer Operations Managers
 
 Who: iBuyer operations managers
@@ -46,6 +50,9 @@ Who: iBuyer operations managers
 What: can automate their renovation projects using our API
 
 Wow: so that informed purchasing decisions are built-in to their business processes, thereby reducing risk & costs.
+
+![iBuyer Operations_Managers](iBuyer_Operations_Manager_Persona.png)
+
 
 ## Architecture
 
