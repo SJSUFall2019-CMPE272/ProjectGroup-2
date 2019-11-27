@@ -1,14 +1,16 @@
-name := """rinnovation-service"""
-maintainer := "andrew@selvia.me"
-organization := "me.selvia.andrew"
+name := """service"""
+maintainer := "andrew.selvia@sjsu.edu"
+organization := "com.rinnovation"
 
 version := "1.0-SNAPSHOT"
 
-lazy val root = (project in file(".")).enablePlugins(PlayScala)
+lazy val service = (project in file(".")).enablePlugins(PlayScala)
 
 scalaVersion := "2.13.0"
 
 libraryDependencies += guice
+libraryDependencies += jdbc
+libraryDependencies += "org.postgresql" % "postgresql" % "42.2.8"
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "4.0.3" % Test
 
 // Adds additional packages into Twirl
