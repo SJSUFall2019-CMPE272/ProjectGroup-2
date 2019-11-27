@@ -1,4 +1,4 @@
-package rinnovation_etl
+package etl
 
 import com.github.tototoshi.csv.{CSVParser, CSVWriter}
 

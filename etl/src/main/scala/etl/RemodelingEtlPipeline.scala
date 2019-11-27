@@ -1,4 +1,4 @@
-package rinnovation_etl
+package etl
 
 import java.io.{ByteArrayOutputStream, File, FileWriter, IOException}
 import java.net.URL
