@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Charts
 
 var year: String?
 var city: String?
@@ -24,18 +25,23 @@ class ViewController: UIViewController {
         view.tableView.register(UITableViewCell.self, forCellReuseIdentifier: identifier)
         view.tableView.dataSource = self
         view.tableView.delegate = self
+        view.tableView.isScrollEnabled = false
+        view.lineChartView.xAxis.axisMinimum = 2008
+        view.lineChartView.xAxis.axisMaximum = 2019
+        view.lineChartView.xAxis.labelPosition = .bottom
+        view.lineChartView.rightAxis.enabled = false
+        view.lineChartView.legend.enabled = false
+//        view.lineChartView.chartDescription?.text = "Cost Recouped by Year"
         self.view = view
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         myView?.tableView.reloadData()
-        if let year = year,
-            let city = city,
+        if let city = city,
             let renovation = renovation {
             var urlComponents = URLComponents(string: "http://localhost:9000/costs-recouped")
             urlComponents?.queryItems = [
-                URLQueryItem(name: "year", value: year),
                 URLQueryItem(name: "city", value: city),
                 URLQueryItem(name: "renovation", value: renovation)
             ]
@@ -44,7 +50,12 @@ class ViewController: UIViewController {
                 .shared
                 .dataTask(with: urlComponents!.url!) { (data, _, _) in
                     DispatchQueue.main.async {
-                        self.navigationItem.title = String(data: data!, encoding: .utf8)
+                        // TODO: IUO
+                        let entries = String(data: data!, encoding: .utf8)?.split(separator: ",").enumerated().map { ChartDataEntry(x: Double(2008 + ($0.offset >= 4 ? $0.offset + 1 : $0.offset)), y: Double($0.element.description.trimmingCharacters(in: .whitespacesAndNewlines))!) }
+                        let lineChartDataSet = LineChartDataSet(entries: entries)
+                        lineChartDataSet.mode = .cubicBezier
+                        lineChartDataSet.drawFilledEnabled = true
+                        self.myView?.lineChartView.data = LineChartData(dataSet: lineChartDataSet)
                     }
             }
                 .resume()
@@ -61,10 +72,6 @@ extension ViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
-    }
-    
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return UIView()
     }
 }
 
