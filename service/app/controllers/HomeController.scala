@@ -13,7 +13,7 @@ class HomeController @Inject()(db: Database, cc: ControllerComponents) extends A
   }
 
   def getCostsRecouped: Action[AnyContent] = Action { implicit request =>
-    val whereSubClauses = Set("year", "city", "renovation")
+    val whereSubClauses = Set("city", "renovation")
       .flatMap(key =>
         request
           .queryString
@@ -35,6 +35,52 @@ class HomeController @Inject()(db: Database, cc: ControllerComponents) extends A
         costsRecouped += resultSet.getDouble("cost_recouped").toString
       }
       Ok(costsRecouped.mkString(", "))
+    } finally {
+      connection.close()
+    }
+  }
+
+  def getCities: Action[AnyContent] = Action { implicit request =>
+    val str = request
+      .queryString
+      .get("renovation")
+      .flatMap(_.headOption)
+      .map(value => s" AND renovation = '$value'")
+      .getOrElse("")
+    // TODO: DRY up
+    val connection = db.getConnection
+    try {
+      val statement = connection.createStatement
+      val query = s"SELECT DISTINCT city FROM costs_recouped WHERE year = '2020'$str"
+      val resultSet = statement.executeQuery(query)
+      val cities = ListBuffer[String]()
+      while (resultSet.next()) {
+        cities += resultSet.getString("city")
+      }
+      Ok(cities.sorted.mkString(", "))
+    } finally {
+      connection.close()
+    }
+  }
+
+  def getRenovations: Action[AnyContent] = Action { implicit request =>
+    val str = request
+      .queryString
+      .get("city")
+      .flatMap(_.headOption)
+      .map(value => s" AND city = '$value'")
+      .getOrElse("")
+    // TODO: DRY up
+    val connection = db.getConnection
+    try {
+      val statement = connection.createStatement
+      val query = s"SELECT DISTINCT renovation FROM costs_recouped WHERE year = '2020'$str)"
+      val resultSet = statement.executeQuery(query)
+      val renovations = ListBuffer[String]()
+      while (resultSet.next()) {
+        renovations += resultSet.getString("renovation")
+      }
+      Ok(renovations.sorted.mkString(", "))
     } finally {
       connection.close()
     }
