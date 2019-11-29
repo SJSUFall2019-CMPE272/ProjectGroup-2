@@ -42,23 +42,34 @@ class HomeController @Inject()(db: Database, cc: ControllerComponents) extends A
   }
 
   def getCities: Action[AnyContent] = Action { implicit request =>
-    val str = request
-      .queryString
-      .get("renovation")
-      .flatMap(_.headOption)
-      .map(value => s" AND renovation = '$value'")
-      .getOrElse("")
     // TODO: DRY up
     val connection = db.getConnection
     try {
       val statement = connection.createStatement
-      val query = s"SELECT DISTINCT city FROM costs_recouped WHERE year = '2020'$str"
+      val renovationOption =
+        request
+          .queryString
+          .get("renovation")
+          .flatMap(_.headOption)
+      val query =
+        renovationOption
+          .map(value => s"SELECT id, english_name, lat, lng, cost_recouped FROM costs_recouped JOIN cities ON city=id WHERE year = 2020 AND renovation = '$value'")
+          .getOrElse(s"SELECT DISTINCT id, english_name, lat, lng FROM costs_recouped JOIN cities ON city=id")
       val resultSet = statement.executeQuery(query)
-      val cities = ListBuffer[String]()
+      val cities = ListBuffer[JsObject]()
       while (resultSet.next()) {
-        cities += resultSet.getString("city")
+        var jsObject = JsObject(Map(
+          "id" -> JsString(resultSet.getString("id")),
+          "englishName" -> JsString(resultSet.getString("english_name")),
+          "lat" -> JsNumber(resultSet.getDouble("lat")),
+          "lng" -> JsNumber(resultSet.getDouble("lng"))
+        ))
+        if (renovationOption.isDefined) {
+          jsObject += ("costRecouped", JsNumber(resultSet.getDouble("cost_recouped")))
+        }
+        cities += jsObject
       }
-      Ok(cities.sorted.mkString(", "))
+      Ok(JsArray(cities.sortBy(x => x.fields.filter(_._1 == "englishName").head._2.toString)))
     } finally {
       connection.close()
     }
@@ -69,19 +80,19 @@ class HomeController @Inject()(db: Database, cc: ControllerComponents) extends A
       .queryString
       .get("city")
       .flatMap(_.headOption)
-      .map(value => s" AND city = '$value'")
+      .map(value => s" WHERE city = '$value'")
       .getOrElse("")
     // TODO: DRY up
     val connection = db.getConnection
     try {
       val statement = connection.createStatement
-      val query = s"SELECT DISTINCT renovation FROM costs_recouped WHERE year = '2020'$str"
+      val query = s"SELECT DISTINCT renovation FROM costs_recouped$str"
       val resultSet = statement.executeQuery(query)
       val renovations = ListBuffer[String]()
       while (resultSet.next()) {
         renovations += resultSet.getString("renovation")
       }
-      Ok(renovations.sorted.mkString(", "))
+      Ok(JsArray(renovations.sorted.map(JsString.apply)))
     } finally {
       connection.close()
     }
