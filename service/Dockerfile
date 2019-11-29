@@ -14,8 +14,8 @@ RUN \
 COPY . /tmp
 WORKDIR /tmp
 RUN sbt dist
-RUN unzip -d / target/universal/rinnovation-service-1.0-SNAPSHOT.zip
+RUN unzip -d / target/universal/service-1.0-SNAPSHOT.zip
 RUN rm -rf *
-WORKDIR /rinnovation-service-1.0-SNAPSHOT
-RUN rm bin/rinnovation-service.bat
-CMD bin/rinnovation-service -Dplay.http.secret.key=aVerySecretKeyThatShouldBeChangedEventuallyToSomethingCryptographicallySecure
+WORKDIR /service-1.0-SNAPSHOT
+RUN rm bin/service.bat
+CMD bin/service -Dplay.http.secret.key=aVerySecretKeyThatShouldBeChangedEventuallyToSomethingCryptographicallySecure
