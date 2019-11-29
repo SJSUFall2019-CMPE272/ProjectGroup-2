@@ -8,6 +8,9 @@
 
 import UIKit
 
+let developing = true
+let host = developing ? "localhost" : "52.53.246.201"
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
     
@@ -16,7 +19,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window.windowScene = windowScene
         let viewController = ViewController()
-        viewController.data = ["years", "cities", "renovations"]
+        viewController.title = "Rinnovation"
+        let tableViewDelegate1 = TableViewDelegate1()
+        tableViewDelegate1.data = ["Cities", "Renovations"]
+        tableViewDelegate1.viewController = viewController
+        viewController.tableViewDelegate = tableViewDelegate1
         window.rootViewController = UINavigationController(rootViewController: viewController)
         self.window = window
         window.makeKeyAndVisible()
