@@ -2,6 +2,7 @@ package controllers
 
 import javax.inject._
 import play.api.db.Database
+import play.api.libs.json.{JsArray, JsNumber, JsObject, JsString}
 import play.api.mvc._
 
 import scala.collection.mutable.ListBuffer
@@ -25,16 +26,16 @@ class HomeController @Inject()(db: Database, cc: ControllerComponents) extends A
       val statement = connection.createStatement
       val query =
         s"""
-           |SELECT cost_recouped
+           |SELECT cost_recouped, year
            |FROM costs_recouped
            |${if (whereSubClauses.isEmpty) "" else "WHERE " + whereSubClauses.mkString("\nAND ")}
            |""".stripMargin
       val resultSet = statement.executeQuery(query)
-      val costsRecouped = ListBuffer[String]()
+      val costsRecouped = ListBuffer[JsObject]()
       while (resultSet.next()) {
-        costsRecouped += resultSet.getDouble("cost_recouped").toString
+        costsRecouped += JsObject(Map("costRecouped" -> JsNumber(resultSet.getDouble("cost_recouped")), "year" -> JsNumber(resultSet.getInt("year"))))
       }
-      Ok(costsRecouped.mkString(", "))
+      Ok(JsArray(costsRecouped))
     } finally {
       connection.close()
     }
