@@ -2,6 +2,7 @@ package etl
 
 import java.io.{ByteArrayOutputStream, File, FileWriter, IOException}
 import java.net.URL
+import java.nio.file.Files
 
 import net.ruippeixotog.scalascraper.browser.JsoupBrowser
 import net.ruippeixotog.scalascraper.dsl.DSL.Extract._
@@ -380,7 +381,6 @@ object RemodelingEtlPipeline extends App {
             .replace("/", ""))
     }
     cityNames
-//      .filter(_ == "sandiegoca") // TODO: remove this when you move to production; only for testing
       .filterNot(citiesCompleted.contains)
       .filterNot(citiesWithoutPdfsByYear.getOrElse(year, Set()).contains) // Some cities do not have accessible PDFs, they result in errors
       .foreach(cityName => {
@@ -490,28 +490,34 @@ object RemodelingEtlPipeline extends App {
       .toSeq
       .map(year :: cityName :: _)
 
-    val csvInput = if (year < 2018) {
-      values.zipWithIndex.map { case (value, index) =>
-        val renovationTypeIndex = 2
-        val upscaleRenovationTypeStartIndicesByYear = Map(
-          2008 -> 19,
-          2009 -> 21,
-          2010 -> 22,
-          2011 -> 22,
-          2013 -> 22,
-          2014 -> 22,
-          2015 -> 23,
-          2016 -> 18,
-          2017 -> 19
-        )
-        value.updated(renovationTypeIndex, s"${value(renovationTypeIndex)} | ${if (index < upscaleRenovationTypeStartIndicesByYear(year)) "Midrange" else "Upscale"}") }
-    } else {
-      values
-    }
+    val csvInput =
+      if (year < 2018) {
+        values.zipWithIndex.map { case (value, index) =>
+          val renovationTypeIndex = 2
+          val upscaleRenovationTypeStartIndicesByYear = Map(
+            2008 -> 19,
+            2009 -> 21,
+            2010 -> 22,
+            2011 -> 22,
+            2013 -> 22,
+            2014 -> 22,
+            2015 -> 23,
+            2016 -> 18,
+            2017 -> 19
+          )
+          value.updated(renovationTypeIndex, s"${value(renovationTypeIndex)} | ${if (index < upscaleRenovationTypeStartIndicesByYear(year)) "Midrange" else "Upscale"}") }
+      } else {
+        values
+        }
+        .filter(_(5).toString.toDouble < 700) // Cut out bad data (for instance, many records from 2018 PDFs are incorrect)
 
-    CSVWriter
-      .open(file)
-      .writeAll(csvInput)
+    if (csvInput.isEmpty) {
+      Files.deleteIfExists(file.toPath)
+    } else {
+      CSVWriter
+        .open(file)
+        .writeAll(csvInput)
+    }
   }
 
   @throws[IOException]

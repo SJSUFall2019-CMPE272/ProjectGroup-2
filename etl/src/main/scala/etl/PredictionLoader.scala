@@ -23,7 +23,6 @@ object PredictionLoader extends App {
   private val password = System.getenv("PASSWORD")
   val aux = Transactor.fromDriverManager[IO]("org.postgresql.Driver", s"jdbc:postgresql://$host:$port/$database", user, password)
 
-
   private val roiContexts =
     new File(s"/tmp/predictions")
       .listFiles
