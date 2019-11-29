@@ -8,8 +8,8 @@
 
 import UIKit
 
-let developing = true
-let host = developing ? "localhost" : "52.53.246.201"
+let developing = false
+let host = developing ? "localhost" : "13.57.48.3"
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     var window: UIWindow?
