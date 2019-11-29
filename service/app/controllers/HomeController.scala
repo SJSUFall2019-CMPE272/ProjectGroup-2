@@ -74,7 +74,7 @@ class HomeController @Inject()(db: Database, cc: ControllerComponents) extends A
     val connection = db.getConnection
     try {
       val statement = connection.createStatement
-      val query = s"SELECT DISTINCT renovation FROM costs_recouped WHERE year = '2020'$str)"
+      val query = s"SELECT DISTINCT renovation FROM costs_recouped WHERE year = '2020'$str"
       val resultSet = statement.executeQuery(query)
       val renovations = ListBuffer[String]()
       while (resultSet.next()) {
