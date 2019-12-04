@@ -18,13 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window.windowScene = windowScene
-        let viewController = ViewController()
-        viewController.title = "Rinnovation"
-        let tableViewDelegate1 = TableViewDelegate1()
-        tableViewDelegate1.data = ["Cities", "Renovations"]
-        tableViewDelegate1.viewController = viewController
-        viewController.tableViewDelegate = tableViewDelegate1
-        window.rootViewController = UINavigationController(rootViewController: viewController)
+        window.rootViewController = PageViewController()
         self.window = window
         window.makeKeyAndVisible()
     }
