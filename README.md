@@ -20,9 +20,9 @@ For corporate property managers, our enterprise solution yields even more insigh
 Maybe you own a rental property and need to know how to develop it. Perhaps you're operating a venture capital-backed startup (i.e. [Opendoor](https://www.curbed.com/2019/3/21/18252048/real-estate-house-flipping-zillow-ibuyer-opendoor), Zillow, etc.) gobbling up millions of dollars of real estate. No matter the size of your business, we want to see your projects succeed. Rinnovation keeps up with the high-velocity, large-scale nature of your work. Reduce risk and proceed more confidently with Rinnovation.
 
 ## Design Thinking
-![Design_Thinking](Design_Thinking.png)
+![Design_Thinking](images/Design_Thinking.png)
 
-![Design_Thinking2](Design_Thinking2.png)
+![Design_Thinking2](images/Design_Thinking2.png)
 
 ### Homeowner
 
@@ -32,7 +32,7 @@ What: can explore predicted returns for various home renovations
 
 Wow: independently, immediately, and with city-level insight into local market trends.
 
-![Home Owner Persona](Home_Owner_Persona.png)
+![Home Owner Persona](images/Home_Owner_Persona.png)
 
 
 ### Home Buyer
@@ -43,7 +43,7 @@ What: can factor in locale-specific renovation ROI prior to purchasing a propert
 
 Wow: so they can make their purchase more confidently, avoiding false assumptions.
 
-![Home Buyer Persona](Home_Buyer_Persona.png)
+![Home Buyer Persona](images/Home_Buyer_Persona.png)
 
 
 ### iBuyer Operations Managers
@@ -54,12 +54,12 @@ What: can automate their renovation projects using our API
 
 Wow: so that informed purchasing decisions are built-in to their business processes, thereby reducing risk & costs.
 
-![iBuyer Operations_Managers](iBuyer_Operations_Manager_Persona.png)
+![iBuyer Operations_Managers](images/iBuyer_Operations_Manager_Persona.png)
 
 
 ## Architecture
 
-![Architecture](Architecture.png)
+![Architecture](images/Architecture.png)
 
 ## Technology
 
