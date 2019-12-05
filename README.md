@@ -104,11 +104,6 @@ We will use whatever machine learning tool is best for the job. I am currently t
 * [React](https://www.github.com/facebook/react): We will build the interface our client application with React. It will not be the primary focus for the project, but we will still make it nice.
 * If time permits, it would also be fun to build a small iOS app that uses our models locally via CoreML as a proof-of-concept implementation of edge computing.
 
-## Feedback
-
-Professor Ranjan's initial reaction:
-> From picture of the home, machine generates square footage of each structure in the home. you need a lot of data to train a CNN model. This will help predict cost and time of renovation. For some fixer upper houses, finding the right measurements without seeing it is impossible.
-
 ## Team
 
 1. [Aditya Agrawal](https://github.com/agrawaladit)
