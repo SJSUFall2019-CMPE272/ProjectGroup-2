@@ -20,6 +20,9 @@ For corporate property managers, our enterprise solution yields even more insigh
 Maybe you own a rental property and need to know how to develop it. Perhaps you're operating a venture capital-backed startup (i.e. [Opendoor](https://www.curbed.com/2019/3/21/18252048/real-estate-house-flipping-zillow-ibuyer-opendoor), Zillow, etc.) gobbling up millions of dollars of real estate. No matter the size of your business, we want to see your projects succeed. Rinnovation keeps up with the high-velocity, large-scale nature of your work. Reduce risk and proceed more confidently with Rinnovation.
 
 ## Design Thinking
+![Design_Thinking](Design_Thinking.png)
+
+![Design_Thinking2](Design_Thinking2.png)
 
 ### Homeowner
 
