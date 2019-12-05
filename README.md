@@ -1,6 +1,15 @@
+![](ios/Rinnovation/Assets.xcassets/AppIcon.appiconset/180.png)
+
 # Rinnovation
 
 Optimize Your Home Renovation
+
+## Deliverables
+
+* [Presentation (Keynote)](presentations/Presentation.key)
+* [Presentation (PDF)](presentations/Presentation.pdf)
+* [Paper](paper/Rinnovation.pdf)
+* [Demo](https://youtu.be/dTtEw9x3BZ8)
 
 ## Abstract
 
